@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xerox Shop Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Xerox Shop Management System</h1>
+    </header>
+    <main>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Total Jobs</h3>
+                    <p id="total-jobs">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Pending Jobs</h3>
+                    <p id="pending-jobs">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>In Progress</h3>
+                    <p id="in-progress-jobs">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Completed Jobs</h3>
+                    <p id="completed-jobs">0</p>
+                </div>
+            </div>
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <ul id="recent-activity-list">
+                    <!-- Recent activities will be added here -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="job-form">
+            <h2>Add New Job</h2>
+            <form id="add-job-form">
+                <label for="customer-name">Customer Name:</label>
+                <input type="text" id="customer-name" required>
+
+                <label for="document-type">Document Type:</label>
+                <select id="document-type" required>
+                    <option value="">Select Type</option>
+                    <option value="document">Document</option>
+                    <option value="photo">Photo</option>
+                    <option value="certificate">Certificate</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="pages">Number of Pages:</label>
+                <input type="number" id="pages" min="1" required>
+
+                <label for="copies">Number of Copies:</label>
+                <input type="number" id="copies" min="1" required>
+
+                <label for="urgency">Urgency:</label>
+                <select id="urgency">
+                    <option value="normal">Normal</option>
+                    <option value="urgent">Urgent</option>
+                    <option value="express">Express</option>
+                </select>
+
+                <button type="submit">Add Job</button>
+            </form>
+        </section>
+
+        <section id="job-list">
+            <h2>Current Jobs</h2>
+            <table id="jobs-table">
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Document Type</th>
+                        <th>Pages</th>
+                        <th>Copies</th>
+                        <th>Urgency</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="jobs-tbody">
+                    <!-- Jobs will be added here dynamically -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
